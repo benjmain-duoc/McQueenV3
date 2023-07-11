@@ -1,0 +1,129 @@
+{% load  static  %}
+
+<!DOCTYPE html>
+<html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Lightning McQueen.cl</title>
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+            <!---<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>---->
+            <script src="https://code.jquery.com/jquery-1.12.3.min.js" integrity="sha256-aaODHAgvwQW1bFOGXMeX+pC4PZIPsvn2h1sArYOhgXQ=" crossorigin="anonymous"></script>
+            <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.6/dist/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.2.1/dist/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css" />
+            <script src="{% static 'core/js/jquery.min.js' %}"></script>
+
+
+            <link href="{% static 'core/css/MyStyle.css'%}" rel="stylesheet">
+        
+        
+        </head>
+<body  class="bodystyle1" >
+    <!-- NAVBAR -->
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="{% url 'inicio' %}" style="padding-left:20px;">
+            <img src="{% static 'core/img/Logo.png'%}" alt="Logo" width="120" height="96" class="d-inline-block align-text-top">
+    
+        </a>
+            <a class="navbar-brand in " href="{% url 'nosotros' %}"><h3 id="nvt"> LightningMcQueen </h3></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"> </span>
+        </button>		
+        <div class="container-fluid" id="Center">
+            <form style="width: 410px;"  class="d-flex" role="search">
+                <input class="form-control me-2" type="search" placeholder="Que tipo de servicio buscas?" aria-label="Search">
+                <button class="btn btn-outline-danger inb" type="submit" >Buscar</button>
+            </form>
+        </div>
+    <div class="collapse navbar-collapse" id="navbarNav" style="padding-right:2.7%;">
+        <ul class="navbar-nav">
+            <li class="nav-item ">
+                <a class="in nav-link active" href="{% url 'inicio' %}">Inicio </a>
+            </li>
+                <li class="nav-item ">
+                <a class="in nav-link disabled" href="{% url 'registro' %}">Registrarse</a>
+            </li>
+                <li class="nav-item ">
+                <a class="in nav-link active" href="{% url 'ingresar' %}">Ingresar</a>
+            </li>
+            <li class="nav-item ">
+                <a class="in nav-link active" href="{% url 'nosotros' %}">Nosotros</a>
+            </li>
+            <li class="nav-item ">
+                <a class="in nav-link active" href="{% url 'tienda' %}">Tienda</a>
+            </li>
+        </ul>
+    </div>
+    </nav>
+
+    <form class="row g-3" style="padding-left:20%; padding-right:20%; padding-top:150px; color:azure; margin:2%;"  >
+        <div class="col-md-6">
+            <label for="nombre" class="form-label d-lg-table-row">Nombres</label>
+            <input type="text" class="form-control" id="nombre" placeholder="Nombres">
+            </div>
+            <div class="col-md-6">
+                <label for="inputLastName" class="form-label">Apellidos</label>
+                <input type="text" class="form-control" id="lastname" placeholder="Apellidos">
+            </div>
+            <div class="col-6">
+                <label for="password" class="form-label">Contraseña</label>
+                <input type="password" class="form-control" id="passwordreg" placeholder="Contraseña">
+            </div>
+            <div class="col-6">        
+                <label for="cpassword" class="form-label">Confirmar contraseña</label>
+                <input type="password" class="form-control" id="cpassword" placeholder="Confirmar contraseña">
+            </div>
+            <div class="col-6">
+                <label for="inputEmail" class="form-label">Email</label>
+                <input type="email" class="form-control" id="emailreg" placeholder="Email"> 
+            </div>
+            <div class="col-6">
+                <label for="inputrut" class="form-label">Rut</label>
+                <input type="text" class="form-control" id="rutreg" placeholder="rut">
+            </div>
+            <div class="col-6">
+                <label for="inputAddress" class="form-label">Dirección</label>
+                <input type="text" class="form-control" id="address" placeholder="Av.Calle #1111">
+            <div>
+                <br><br>
+
+<!---------------------api-->
+<div id="regionSelection">
+    <label for="selectRegion">Selecciona una región:</label>
+    <select id="selectRegion">
+      <option value="">Seleccione una región</option>
+    </select>
+  </div>
+  
+<!--------------------api-->
+            <br><br>
+
+            <div class="col-md-6"style="padding-top:20px;">
+                <label for="inputCity" class="form-label">Ciudad</label>
+                <input type="text" class="form-control" id="city" placeholder="Ciudad">
+            </div>
+
+
+        <div class="col-12"style="padding-top:15px;">
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="checkreg">
+            <label class="form-check-label" for="gridCheck">
+            He leido y acepto los terminos y condiciones.
+            </label>
+
+        </div>
+        </div>
+        <div class="col-12"style="padding-top:15px;">
+        <button type="submit" class="btn btn-primary" onclick="return sendRegister()" value="enviar(js)" id="submitregister">Registrarse</button>
+        </div>
+        <div 
+            id="error" style="color:red">
+        </div>
+    </form>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js" integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N" crossorigin="anonymous"></script>`
+    <script src="{% static 'core/js/app.js'%}"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js" integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N" crossorigin="anonymous"></script>
+</body>
+</html>

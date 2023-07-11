@@ -1,0 +1,375 @@
+{% load  static  %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Lightning McQueen.cl</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.6/dist/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.2.1/dist/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css" />
+    <link rel="stylesheet" href="css/swiper-bundle.min.css" />
+    <link href="{% static 'core/css/MyStyle.css'%}" rel="stylesheet">
+    <link href="{% static 'core/css/MyStyle.css'%}">
+	<!--Scripts propios-->
+
+
+</head>
+<body class="bodystyle1"  >
+
+	<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+	<div class="container-fluid">
+	<a class="navbar-brand-margin-end "  style="padding-left:2em;" id="logo">
+		
+		<img src="{% static 'core/img/Logo.png'%}" alt="Logo"  width="120" height="96" class="d-inline-block align-text-top">
+		<a class="navbar-brand in " href="{% url 'nosotros' %}"><h3 id="nvt"> LightningMcQueen </h3></a>
+	</a>
+	
+
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"> </span>
+		</button>		
+	<div class="container-fluid btn" id="Center">
+		<form style="width: 400px;"  class="d-flex" role="search">
+			<input class="form-control me-2" type="search" placeholder="Que tipo de servicio buscas?" aria-label="Search">
+			<button class="btn inb btn-outline-danger" type="submit" >
+				Buscar
+			</button>
+		</form>
+	</div>
+</div>
+	<!--Pequeños arreglos esteticos y implementaciones de nuevas ideas. -->
+	
+	<div id="navitems2">
+		<div class="dropdown d-flex" style="padding-right:5em;">
+			<button class="btn btn-warning dropdown-toggle" type="button" data-bs-toggle="dropdown" >Todos los servicios</button>
+			<ul class="dropdown-menu">
+					<li class="nav-item ">
+					<a class="in nav-link active"  href="{% url 'registro' %}">Registrarse</a>
+				</li>
+					<li class="nav-item ">
+					<a class="in nav-link active"  href="{% url 'ingresar' %}">Ingresar</a>
+				</li>
+				<li class="nav-item ">
+					<a class="in nav-link active"  href="{% url 'nosotros' %}">Nosotros</a>
+				</li>
+				<li class="nav-item ">
+					<a class="in nav-link active" href="{% url 'tienda' %}">Tienda</a>
+				</li>
+				<li class="nav-item ">
+					<a class="in nav-link active" href="{% url 'poblar' %}">Organizador</a>
+				</li>
+
+			</ul>
+		</div>
+	</div>
+
+
+
+	<div id="navitems">
+		<div class="collapse navbar-collapse" id="navbarNav" style="padding-right:2.4em;">
+			<ul class="navbar-nav">
+				<li class="nav-item ">
+					<a class="in nav-link disabled" href="{% url 'inicio' %}">Inicio </a>
+				</li>
+					<li class="nav-item ">
+					<a class="in nav-link active" href="{% url 'registro' %}">Registrarse</a>
+				</li>
+					<li class="nav-item ">
+					<a class="in nav-link active" href="{% url 'ingresar' %}">Ingresar</a>
+				</li>
+				<li class="nav-item ">
+					<a class="in nav-link active" href="{% url 'nosotros' %}">Nosotros</a>
+				</li>
+				<li class="nav-item ">
+					<a class="in nav-link active" href="{% url 'tienda' %}">Tienda</a>
+				</li>
+				</ul>
+			</div>
+
+	</div>
+
+</nav>
+
+
+	<!--CARRUSEL-->	
+<div id="carouselExampleAutoplaying" class="carousel slide bs2" data-bs-ride="carousel" >
+		<div class="carousel-inner ">
+			<div class="carousel-item active ">
+				<img height="780em"  src="{% static 'core/img/carrusel/welcome.gif'%}" class="d-block w-100 " >
+			</div>
+			<div class="carousel-item">
+				<img height="780em"  src="{% static 'core/img/carrusel/Trabajo1.png'%}" class="d-block w-100" href="">
+			</div>
+			<div class="carousel-item">
+				<img height="780em" src="{% static 'core/img/carrusel/Trabajo2.png'%}" class="d-block w-100" href="">
+			</div>
+			<div class="carousel-item">
+				<img height="780em" src="{% static 'core/img/carrusel/Trabajo3.png'%}" class="d-block w-100" href="s_pintura.html">
+			</div>
+
+
+		</div>
+			<!---->
+		<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+			<span aria-hidden="true"><img src="{% static 'core/img/carrusel/R.png'%}" class="card-img-top cas"></span>
+			<span class="visually-hidden"></span>
+		</button>
+		<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+			<span aria-hidden="true"><img src="{% static 'core/img/carrusel/L.png'%}" class="card-img-top cas"></span>
+			<span class="visually-hidden"></span>
+		</button>
+</div>
+
+
+	<a href="{% url 'S_todos' %}"> <div class="shadow p-3 mb-5 dtse in sp" id="Center" style="display: flex; height:7em; ">
+		<h1 id="nvt"> SERVICIOS </h1> 
+	</div></a><br><br><br>
+
+	<div class="col-1">
+		<a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+			<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+			<span class="visually-hidden">Anterior</span>
+		</a>
+	</div>
+	
+	<div class="col-10" style="margin-left: 110px;">
+		<div id="myCarousel" class="carousel slide" data-ride="carousel">
+			<div class="carousel-inner">
+				<div class="carousel-item active">
+					<div class="row">
+						<div class="col-lg-4 col-md-6">
+							<div class="card text-bg-dark border-info mb-3" style="height: 28em;">
+								<!-- Contenido de la card -->
+								<a href="{% url 'S_cambio' %}">
+									<img src="{% static 'core/img/items/cambio aceite.jpg'%}" class="card-img-top" >
+									<div class="card-body">
+										<h4 class="card-title">Cambio de Aceite y Filtro</h4>
+										<p class="card-text">Cambia de aceite con nosotros con nuestra actual promoción, 40% de descuento.</p>
+										<p style="color:grey;">(incluye asesoría completa)</p>
+										<a id="cbp" href="{% url 'S_cambio' %}" class="btn btn-primary csc">Ver servicio</a>
+									</div>
+								</a>
+							</div>
+						</div>
+						<div class="col-lg-4 col-md-6">
+							<div class="card text-bg-dark border-info mb-3" style="height: 28em;">
+								<!-- Contenido de la card -->
+								<a href="{% url 'S_polarizado' %}">
+									<img src="{% static 'core/img/items/Polar1.jpg'%}" class="card-img-top" >
+									<div class="card-body">
+										<h4 class="card-title cts">Polarizado</h4>
+										<p class="card-text">Material 100% internacional de calidad.</p>
+										<p style="color:grey;">(Disponibles en todas las tonalidades incluso las permitidas para la revisión técnica)</p>
+										<a id="cbp" href="{% url 'S_polarizado' %}" class="btn btn-primary csc">Ver servicio</a>
+									</div>
+								</a>
+							</div>
+						</div>
+						<div class="col-lg-4 col-md-6">
+							<div class="card text-bg-dark border-info mb-3" style="height: 28em;">
+								<!-- Contenido de la card -->
+								<a href="{% url 'S_ajuste' %}">
+									<img src="{% static 'core/img/items/Ajustemotor.jpg'%}" class="card-img-top" >
+									<div class="card-body">
+										<h4 class="card-title">Ajuste de motor</h4>
+										<p class="card-text">¿Escuchas sonidos extraños en tu auto y no rinde en las subidas como antes? Realiza un ajuste del motor y siéntelo como antes.</p>
+										<p style="color:grey;">(incluye revisión, diagnóstico y cotización)</p>
+										<a id="cbp" href="{% url 'S_ajuste' %}" class="btn btn-primary csc">Ver servicio</a>
+									</div>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="carousel-item">
+					<div class="row">
+						<div class="col-lg-4 col-md-6">
+							<div class="card text-bg-dark border-info mb-3" style="height: 28em;">
+								<!-- Contenido de la card -->
+								<a href="{% url 'S_pintura' %}">
+									<img src="{% static 'core/img/items/CardMate.jpg'%}" class="card-img-top" >
+									<div class="card-body">
+										<h4 class="card-title">Repintado Mate</h4>
+										<p class="card-text">¿Buscas un estilo elegante para tu auto? Prueba lo nuevo y elegante pintándolo Mate.</p>
+										<p style="color:grey;">(incluye colores rojo, verde oliva, negro, gris, plomo, gris perla, burdeo y amarillo.)</p>
+										<a id="cbp" href="{% url 'S_pintura' %}" class="btn btn-primary csc">Ver servicio</a>
+									</div>
+								</a>
+							</div>
+						</div>
+						<div class="col-lg-4 col-md-6">
+							<div class="card text-bg-dark border-info mb-3" style="height: 28em;">
+								<!-- Contenido de la card -->
+								<a href="{% url 'S_lamina' %}">
+									<img src="{% static 'core/img/items/Lamseg.jpg'%}" class="card-img-top" >
+									<div class="card-body">
+										<h4 class="card-title">Lámina de seguridad</h4>
+										<p class="card-text">Material 100% internacional de calidad.</p>
+										<p style="color:grey;">(Resiste entre 8 y 10 golpes con objetos contundentes como martillo, piedra, bate, etc.)</p>
+										<a id="cbp" href="{% url 'S_lamina' %}" class="btn btn-primary csc">Ver servicio</a>
+									</div>
+								</a>
+							</div>
+						</div>
+						<div class="col-lg-4 col-md-6">
+							<div class="card text-bg-dark border-info mb-3" style="height: 28em;">
+								<!-- Contenido de la card -->
+								<a href="#">
+									<img src="https://thumbs.dreamstime.com/b/coming-soon-neon-sign-black-background-vector-illustration-146824849.jpg" class="card-img-top">
+									<div class="card-body">
+										<h4 class="card-title placeholder-glow">
+											<span class="placeholder col-6"></span>
+										</h4>
+										<p class="card-text placeholder-glow">
+											<span class="placeholder col-7"></span>
+											<span class="placeholder col-4"></span>
+											<span class="placeholder col-4"></span>
+											<span class="placeholder col-6"></span>
+											<span class="placeholder col-8"></span>
+											<br><br>
+											<span class="placeholder col-4 bg-secondary"></span>
+											<span class="placeholder col-4 bg-secondary"></span>
+											<span class="placeholder col-4 bg-secondary"></span>
+										</p>
+										<a id="cbp" class="btn btn-primary disabled placeholder csc">Muy pronto...</a>
+									</div>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- Añade más "carousel-items" según sea necesario -->
+			</div>
+		</div>
+	</div>
+	
+	<div class="col-1">
+		<a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+			<span class="carousel-control-next-icon" aria-hidden="true"></span>
+			<span class="visually-hidden">Siguiente</span>
+		</a>
+	</div>
+
+<!-- plantilla para otra card
+				<div class="col-4">
+					<div class="card">
+						Contenido de  card extra
+					</div>
+				</div> -->
+	
+
+	
+<!--FIN CARDS -->
+<!-- NOSOTROS -->
+	<div style="margin-bottom:5em; background-color:rgb(53, 53, 53); display: flex; margin-top:9em; margin-bottom:10em;">
+		<div class="container row" style="margin:3em;">
+		<div class="col-6">
+			<h1 id="tituloNo">¿Quienes somos?</h1>
+				<p id="dtpN"><br>El taller LightningMcQueen nace un dia 23 de Julio del 2002 con un pequeño grupo de estudiantes en tecnico de mecanica, y así avanzando los años llegaos a ser uno de las empresas en el rubro de la mecanica más conocidos en chile.
+				En taller LightningMcQueen no solo somos un grupo de mecanicos, contigo somos el equipo que hará que tu auto sea ese con el que sueñas
+				<br>Nuestro equipo de especialistas se desempeña de manera exceleente en diversas areas como la electrónica automotriz, mecatrónica automotriz
+				entre otras dicho de otra forma tu auto tendra atencion y mediciones perfectas tanto en el area electrica como tambien 
+				en las suspensión, llantas, chasis, pintura, dirección y todo lo que necesite. <br><br>
+				Nuestro servicio se caracteriza por ser eficaz, de calidad, con experiencia y por la amabilidad y respeto de nuestros trabajadores
+				logrando un trabajo siempre por sobre la competencia brindando calidad de servicio y rapidez. 
+				<br>En taller mcqueen nos encargamos de ofrecerte un buen servicio siempre actualizado para ser la mejor opcion para tu auto.
+				</p>
+		</div>
+		<div class="col-md-6" style="margin-top:6em; padding-left:5em; ">
+			<img class="border border-danger mb-3" src="{% static 'core/img/mecanic.jpg'%}" width="550px"  alt="Imagen de nuestro equipo"> 
+		</div>
+		</div>
+	</div>
+<!-- SUBSCRIPCION -->
+
+	<div id="Center" style="color:azure; margin-bottom:12em;" class="textt">
+		<section class="section ">
+			<div class=" container col-8" style="padding:2em;">
+				<h1>Coméntanos cómo mejorar la página y sus servcicios</h1>
+				<p  class="text2">Suscribete para que te mantengas informado sobre nuestros horarios de atención. </p>
+				<form >
+					<input type="text" placeholder="Ingrese su comentario..." class="text1 col-9"/>
+					<button class="button2">Suscribete </button>
+				</form>
+		</div>
+	</div>	
+
+<!-- FOOTER NUEVO -->
+<footer>
+	<div class="footer-container">
+	<div class="footer-section">
+		<h3>Navegación</h3>
+		<ul>
+		<li><a href="#">Inicio</a></li>
+		<li><a href="#">Nosotros</a></li>
+		<li><a href="#">Productos</a></li>
+		<li><a href="#">Tienda</a></li>
+		<li><a href="#">Ofertas</a></li>
+		<li><a href="#">Contacto</a></li>
+		<li><a href="#">Como Comprar</a></li>
+		<li><a href="#">Como Instalar Maquinaria</a></li>
+		<li><a href="#">Centro de Ayuda</a></li>
+		</ul>
+	</div>
+	
+	<div class="footer-section">
+		<h3>Medios de pago</h3>
+		<ul>
+		<li><a href="{% url 'metodos_pagos' %}">Tarjeta de crédito</a></li>
+		<li><a href="#">PayPal</a></li>
+		<li><a href="#">Transferencia bancaria</a></li>
+		<li><a href="#">Guía de Compra</a></li>
+		<img src="{% static 'core/img/imgPago.png'%}">
+		</ul>
+	</div>
+	
+	<div class="footer-section">
+		<h3>Necesitas ayuda</h3>
+		<ul>
+		<li><a href="#">Centro de ayuda</a></li>
+		<li><a href="#">Envianos un Mensaje</a></li>
+		<li><a href="#">Simulador</a></li>
+		<li><a href="#">Garantia</a></li>
+		<li><a href="#">Casos de estudio</a></li>
+		<li><a href="#">Fichas de Estudio</a></li>
+		<li><a href="#">Glosario de Terminos </a></li>
+		<li><a href="#">Blog Laminas de Seguridad</a></li>
+		<li><a href="#">Preguntas Frecuentes</a></li>
+		<li><a href="#">Términos y Condiciones</a></li>
+		</ul>
+	</div>
+	<div class="footer-section">
+		<h3 class="footer-section">Atención al cliente
+			<br><br>
+			<h3>Horarios:</h3>
+		</h3>
+		<P style="color: #333;">Lunes a viernes de 9:00 a 18:00 hrs.</P>
+		<br><br>
+	<ul>
+		<li>
+			<h3>Email:</h3>
+			<a href="#">LightningMcQueen@gmail.com</a></li>
+			<br><br>
+		<li><h3>Direccion:</h3>
+			<a href="/dnd_encontrarnos.html">Av. Manuel Montt 2024 Providencia, Santiago, Chile</a></li>
+		<li><a href="#"></a></li>
+		</ul>
+	</div>
+</div>
+	
+	<div class="footer-bottom">
+	<p>&copy; Lightning McQueen.cl Desarrollado por <a href="{% url 'Equipo' %}">Nosotros</a></p>
+	</div>
+</footer>
+	<!--LINS DE CONNECTION-->
+	<script src="{% static 'core/js/anim.js'%}"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js" integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N" crossorigin="anonymous"></script>
+</body>
+
+</html>

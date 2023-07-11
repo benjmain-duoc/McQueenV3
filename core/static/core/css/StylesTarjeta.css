@@ -1,0 +1,29 @@
+.card-container {
+    width: 400px;
+    margin: 0 auto;
+    margin-top: 50px;
+}
+.card {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    .card-header {
+    background-color: #f8f9fa;
+    padding: 10px;
+    }
+    .card-body {
+    padding: 20px;
+    }
+    .nav-link {
+    cursor: pointer;
+    }
+    .tab-pane {
+    display: none;
+    }
+    .form-group {
+    margin-bottom: 20px;
+    }
+    .btn-primary {
+    margin-top: 20px;
+}

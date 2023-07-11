@@ -1,0 +1,213 @@
+{% load  static  %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Agregar Tarjetas</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="StylesTarjeta.css">
+  <link href="{% static 'core/css/StylesTarjeta.css'%}" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+</head>
+<body class="bodystyle1" >
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand"  href="{% url 'inicio' %}" style="padding-left:20px;">
+        <img src="{% static 'core/img/Logo.png'%}" alt="Logo" width="120" height="96" class="d-inline-block align-text-top">
+    </a>
+        <a class="navbar-brand in " href="{% url 'nosotros' %}"><h3 id="nvt"> LightningMcQueen </h3></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"> </span>
+    </button>      
+    <div class="container-fluid" id="Center">
+        <form style="width: 400px;"  class="d-flex" role="search">
+            <input class="form-control me-2" type="search" placeholder="Que tipo de servicio buscas?" aria-label="Search">
+            <button class="btn btn-outline-danger inb" type="submit" >Buscar</button>
+        </form>
+    </div>
+<div class="collapse navbar-collapse" id="navbarNav" style="padding-right:2.7%;">
+    <ul class="navbar-nav">
+		<li class="nav-item ">
+			<a class="in nav-link active" href="{% url 'inicio' %}">Inicio </a>
+		</li>
+			<li class="nav-item ">
+			<a class="in nav-link active" href="{% url 'Registro' %}">Registrarse</a>
+		</li>
+			<li class="nav-item ">
+			<a class="in nav-link active" href="{% url 'Ingresar' %}">Ingresar</a>
+		</li>
+		<li class="nav-item ">
+			<a class="in nav-link active" href="{% url 'nosotros' %}">Nosotros</a>
+		</li>
+    <li class="nav-item ">
+      <a class="in nav-link active" href="{% url 'tienda' %}">Tienda</a>
+    </li>
+    </ul>
+</div>
+    </nav>
+    
+
+
+  <div class="container">
+    <div class="card-container">
+      <div class="card">
+        <div class="card-header">
+          <ul class="nav nav-tabs card-header-tabs">
+            <li class="nav-item">
+              <a class="nav-link active" id="debit-credit-tab" data-toggle="tab" href="#debit-credit">Tarjeta de Débito/Crédito</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="paypal-tab" data-toggle="tab" href="#paypal">PayPal</a>
+            </li>
+          </ul>
+        </div>
+        <div class="card-body">
+          <div class="tab-content">
+            <div class="tab-pane fade show active" id="debit-credit">
+              <form>
+                <!-- Campos para tarjeta de débito/crédito -->
+                <div class="form-group">
+                  <label for="card-number">Número de Tarjeta</label>
+                  <input type="text" class="form-control" id="card-number">
+                </div>
+                <div class="form-group">
+                  <label for="card-name">Nombre en la Tarjeta</label>
+                  <input type="text" class="form-control" id="card-name">
+                </div>
+                <div class="form-row">
+                  <div class="form-group col-md-6">
+                    <label for="expiry-month">Mes de Caducidad</label>
+                    <select class="form-control" id="expiry-month">
+                        <option selected>Seleccionar...</option>
+                        <option>01</option>
+                        <option>02</option>
+                        <option>03</option>
+                        <option>04</option>
+                        <option>05</option>
+                        <option>06</option>
+                        <option>07</option>
+                        <option>08</option>
+                        <option>09</option>
+                        <option>10</option>
+                        <option>11</option>
+                        <option>12</option>
+
+                      
+                    </select>
+                  </div>
+                  <div class="form-group col-md-6">
+                    <label for="expiry-year">Año de Caducidad</label>
+                    <select class="form-control" id="expiry-year">
+                        <option selected>Seleccionar...</option>
+                        <option>2023</option>
+                        <option>2024</option>
+                        <option>2025</option>
+                        <option>2026</option>
+                        <option>2027</option>
+                        <option>2028</option>
+                        <option>2029</option>
+                        <option>2030</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="form-group">
+                    <label for="cvv">CVV</label>
+                    <input type="text" class="form-control" id="cvv">
+                  </div>
+                  <button type="submit" class="btn btn-primary">Agregar Tarjeta</button>
+                </form>
+              </div>
+              <div class="tab-pane fade" id="paypal">
+                <form>
+                  <!-- Campos para PayPal -->
+                  <div class="form-group">
+                    <label for="paypal-email">Correo Electrónico de PayPal</label>
+                    <input type="email" class="form-control" id="paypal-email">
+                  </div>
+                  <div class="form-group">
+                    <label for="paypal-password">Contraseña de PayPal</label>
+                    <input type="password" class="form-control" id="paypal-password">
+                  </div>
+                  <button type="submit" class="btn btn-primary">Agregar PayPal</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <footer>
+      <div class="footer-container">
+      <div class="footer-section">
+        <h3>Navegación</h3>
+        <ul>
+        <li><a href="#">Inicio</a></li>
+        <li><a href="#">Nosotros</a></li>
+        <li><a href="#">Productos</a></li>
+        <li><a href="#">Tienda</a></li>
+        <li><a href="#">Ofertas</a></li>
+        <li><a href="#">Contacto</a></li>
+        <li><a href="#">Como Comprar</a></li>
+        <li><a href="#">Como Instalar Maquinaria</a></li>
+        <li><a href="#">Centro de Ayuda</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-section">
+        <h3>Medios de pago</h3>
+        <ul>
+        <li><a href="/m_pagos.html">Tarjeta de crédito</a></li>
+        <li><a href="#">PayPal</a></li>
+        <li><a href="#">Transferencia bancaria</a></li>
+        <li><a href="#">Guía de Compra</a></li>
+        <img src="{% static 'core/img/imgPago.png'%}">
+        </ul>
+      </div>
+      
+      <div class="footer-section">
+        <h3>Necesitas ayuda</h3>
+        <ul>
+        <li><a href="#">Centro de ayuda</a></li>
+        <li><a href="#">Envianos un Mensaje</a></li>
+        <li><a href="#">Simulador</a></li>
+        <li><a href="#">Garantia</a></li>
+        <li><a href="#">Casos de estudio</a></li>
+        <li><a href="#">Fichas de Estudio</a></li>
+        <li><a href="#">Glosario de Terminos </a></li>
+        <li><a href="#">Blog Laminas de Seguridad</a></li>
+        <li><a href="#">Preguntas Frecuentes</a></li>
+        <li><a href="#">Términos y Condiciones</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3 class="footer-section">Atención al cliente
+          <br><br>
+          <h3>Horarios:</h3>
+        </h3>
+        <P style="color: #333;">Lunes a viernes de 9:00 a 18:00 hrs.</P>
+        <br><br>
+      <ul>
+        <li>
+          <h3>Email:</h3>
+          <a href="#">LightningMcQueen@gmail.com</a></li>
+          <br><br>
+        <li><h3>Direccion:</h3>
+          <a href="/dnd_encontrarnos.html">Av. Manuel Montt 2024 Providencia, Santiago, Chile</a></li>
+        <li><a href="#"></a></li>
+        </ul>
+      </div>
+    </div>
+      
+      <div class="footer-bottom">
+      <p>&copy; Lightning McQueen.cl Desarrollado por <a href="/Equipo.html">Nosotros</a></p>
+      </div>
+    </footer>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js" integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N" crossorigin="anonymous"></script>
+	<script src="app.js"></script>
+</body>
+</html>
+  
+

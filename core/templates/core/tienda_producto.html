@@ -1,0 +1,154 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lightning McQueen.cl</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.6/dist/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.2.1/dist/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css" />
+    <link rel="stylesheet" href="css/swiper-bundle.min.css" />
+    <link href="{% static 'core/css/MyStyle.css' %}" rel="stylesheet">
+    <link href="{% static 'core/css/producto.css' %}" rel="stylesheet">
+</head>
+<body class="bodystyle1">
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+		<a class="navbar-brand" href="{% url 'inicio' %}" style="padding-left:20px;">
+			<img src="{% static 'core/img/Logo.png'%}" alt="Logo" width="120" height="96" class="d-inline-block align-text-top">
+		</a>
+			<a class="navbar-brand in " href="{% url 'nosotros' %}"><h3 id="nvt"> LightningMcQueen </h3></a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"> </span>
+		</button>      
+		<div class="container-fluid" id="Center">
+			<form style="width: 400px;"  class="d-flex" role="search">
+				<input class="form-control me-2" type="search" placeholder="Que tipo de servicio buscas?" aria-label="Search">
+				<button class="btn btn-outline-danger inb" type="submit" >Buscar</button>
+			</form>
+		</div>
+	<div class="collapse navbar-collapse" id="navbarNav" style="padding-right:2.7%;">
+		<ul class="navbar-nav">
+			<li class="nav-item ">
+				<a class="in nav-link active" href="{% url 'inicio' %}">Inicio </a>
+			</li>
+				<li class="nav-item ">
+				<a class="in nav-link active" href="{% url 'registro' %}">Registrarse</a>
+			</li>
+				<li class="nav-item ">
+				<a class="in nav-link active" href="{% url 'ingresar' %}">Ingresar</a>
+			</li>
+			<li class="nav-item ">
+				<a class="in nav-link active" href="{% url 'nosotros' %}">Nosotros</a>
+			</li>
+			<li class="nav-item ">
+				<a class="in nav-link active" href="{% url 'tienda' %}">Tienda</a>
+			</li>
+		</ul>
+	</div>
+		</nav>
+	
+    
+    <div class="container">
+        <h1 id="nvt" class="text-center mt-4">Galería de productos</h1>
+        <br><br>
+        <div class="row">
+            {% if list %}
+                {% for pro in list %}
+                    <div class="col-md-4">
+                        <a href="{% url 'ficha' id_producto=pro.id_producto %}" class="text-decoration-none">
+                            <div class="card bg-dark text-light mb-4 border btn-danger border-danger">
+                                <img src="/media/{{ pro.imagen }}" class="card-img-top align-self-center border-danger" style="width: 90%;" alt="Productos">
+                                <div class="card-body">
+                                    <h4 class="card-title">{{ pro.producto }}</h4>
+                                    <p class="card-text">{{ pro.detalle }}</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                {% endfor %}
+            {% endif %}
+        </div>
+    </div>
+    
+    <div class="text-center mt-4">
+        <a href="{% url 'inicio' %}" class="btn btn-danger" style="margin-bottom: 5px; margin-left: 5px;">
+            <img src="{% static 'core/img/inicio.png' %}" alt="Flecha izquierda" class="arrow-icon" style="width: 20px; height: 20px;">
+            Ir a la página de inicio
+        </a>
+    </div>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>Navegación</h3>
+                <ul>
+                    <li><a href="#">Inicio</a></li>
+                    <li><a href="#">Nosotros</a></li>
+                    <li><a href="#">Productos</a></li>
+                    <li><a href="#">Tienda</a></li>
+                    <li><a href="#">Ofertas</a></li>
+                    <li><a href="#">Contacto</a></li>
+                    <li><a href="#">Cómo Comprar</a></li>
+                    <li><a href="#">Cómo Instalar Maquinaria</a></li>
+                    <li><a href="#">Centro de Ayuda</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Medios de pago</h3>
+                <ul>
+                    <li><a href="{% url 'metodos_pagos' %}">Tarjeta de crédito</a></li>
+                    <li><a href="#">PayPal</a></li>
+                    <li><a href="#">Transferencia bancaria</a></li>
+                    <li><a href="#">Guía de Compra</a></li>
+                    <img src="{% static 'core/img/imgPago.png' %}">
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Necesitas ayuda</h3>
+                <ul>
+                    <li><a href="#">Centro de ayuda</a></li>
+                    <li><a href="#">Envíanos un Mensaje</a></li>
+                    <li><a href="#">Simulador</a></li>
+                    <li><a href="#">Garantía</a></li>
+                    <li><a href="#">Casos de estudio</a></li>
+                    <li><a href="#">Fichas de Estudio</a></li>
+                    <li><a href="#">Glosario de Términos</a></li>
+                    <li><a href="#">Blog Láminas de Seguridad</a></li>
+                    <li><a href="#">Preguntas Frecuentes</a></li>
+                    <li><a href="#">Términos y Condiciones</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3 class="footer-section">Atención al cliente</h3>
+                <h3>Horarios:</h3>
+                <p style="color: #333;">Lunes a viernes de 9:00 a 18:00 hrs.</p>
+                <ul>
+                    <li>
+                        <h3>Email:</h3>
+                        <a href="#">LightningMcQueen@gmail.com</a>
+                    </li>
+                    <li>
+                        <h3>Dirección:</h3>
+                        <a href="/dnd_encontrarnos.html">Av. Manuel Montt 2024 Providencia, Santiago, Chile</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; Lightning McQueen.cl Desarrollado por <a href="{% url 'Equipo' %}">Nosotros</a></p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js" integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N" crossorigin="anonymous"></script>
+    <script src="{% static 'core/js/app.js' %}"></script>
+</body>
+</html>
